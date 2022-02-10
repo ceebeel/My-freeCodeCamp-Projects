@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Survey Form</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+    body {
+      color: white;
+      font-size: 18px;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.5;
+      /* font-weight: 100; */
+    }
+    body::before {
+      content: '';
+      z-index: -1;
+      background-image: url("https://www.allwhitebackground.com/wp-content/uploads/7/Purple-Galaxy-Wallpaper-1920x1080-01941.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    header {
+      padding: 24px;
+      margin: auto;
+      text-align: center;
+      line-height: 1;
+
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      background-color: rgba(102, 102, 153, 0.9);
+      border-radius: 4px;
+      color: white;
+      padding: 24px;
+      margin: auto;
+    }
+
+    .label-title {
+      margin: 25px 0 10px 0;
+    }
+
+    #name,
+    #email,
+    #age {
+      border-radius: 4px;
+      height: 2.25em;
+    }
+
+    select {
+      border-radius: 4px;
+      height: 2.55em;
+    }
+
+    .group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    textarea {
+      height: 120px;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    button {
+      height: 3em;
+      border-radius: 4px;
+      margin: 15px 0;
+      background-color: #2ab955;
+      color: white;
+      border: none;
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">Audius.nim module Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the module</p>
+  </header>
+
+  <main>
+    <form id="survey-form">
+      <label id="name-label" class="label-title" for="name">Name</label> <input type="text" id="name"
+        placeholder="Enter your name" required>
+      <label id="email-label" class="label-title" for="email">Email</label> <input type="email" id="email"
+        placeholder="Enter your Email." required>
+      <label id="number-label" class="label-title" for="age">Age</label> <input min="0" max="15" type="number" id="age"
+        placeholder="Enter your age (optional)" required>
+
+      <label class="label-title" for="dropdown">How many time are you using this module?</label>
+      <select id="dropdown" name="dropdown">
+        <option disabled selected value>Select less or more one year</option>
+        <option value="less">Less one year</option>
+        <option value="one">One year</option>
+        <option value="more">More one year</option>
+      </select>
+
+      <label id="radio-label" class="label-title" for="radio">Would you prefer iterators or functions that return array?
+      </label>
+      <div class="group">
+        <label for="radio0"><input name="radio" id="radio0" type="radio" value="Iterator" checked>
+          Iterator (ex: for track inuser.Tracks)
+        </label>
+        <label for="radio1"><input name="radio" id="radio1" type="radio" value="Array">
+          Array (ex: tracks = user.Tracks)
+        </label>
+      </div>
+
+      <label id="checkbox-label" class="label-title" for="checkbox">For what kind of application are you using this
+        module? </label>
+      <div class="group">
+        <label for="checkbox0"><input name="checkbox" id="checkbox0" type="checkbox" value="Music Plafer">
+          Music Player</label>
+        <label for="checkbox1"><input name="checkbox" id="checkbox1" type="checkbox" value="Game">
+          Game
+        </label>
+        <label for="checkbox2"><input name="checkbox" id="checkbox2" type="checkbox" value="Other">
+          Other
+        </label>
+      </div>
+
+      <label id="textarea-label" class="label-title" for="textarea">Any comments or suggestions?</label>
+      <textarea id="textarea" type="textarea" placeholder="Enter your comment here..."></textarea>
+      </textarea>
+      <button type="submit" id="submit" class="submit-button">Submit</button>
+    </form>
+  </main>
+
+</body>
+
+</html>
